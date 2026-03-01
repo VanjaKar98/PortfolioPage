@@ -27,10 +27,7 @@ const StyledImage = styled.img`
 export default function BackgroundContainer() {
   return (
     <StyledBackgroundContainer>
-      <StyledImage
-        src="../src/assets/images/background.png"
-        alt=""
-      ></StyledImage>
+      <StyledImage src="../assets/images/background.png" alt=""></StyledImage>
     </StyledBackgroundContainer>
   );
 }

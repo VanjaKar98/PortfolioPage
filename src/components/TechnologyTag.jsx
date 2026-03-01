@@ -38,9 +38,9 @@ export default function TechnologyTag({ tech }) {
 }
 
 const technology = [
-  { name: "html", logo: "../src/assets/images/html_logo.png" },
-  { name: "css", logo: "../src/assets/images/css_logo.png" },
-  { name: "scss", logo: "../src/assets/images/sass_logo.png" },
-  { name: "js", logo: "../src/assets/images/js_logo.png" },
-  { name: "react", logo: "../src/assets/images/react_logo.png" },
+  { name: "html", logo: "../assets/images/html_logo.png" },
+  { name: "css", logo: "../assets/images/css_logo.png" },
+  { name: "scss", logo: "../assets/images/sass_logo.png" },
+  { name: "js", logo: "../assets/images/js_logo.png" },
+  { name: "react", logo: "../assets/images/react_logo.png" },
 ];
