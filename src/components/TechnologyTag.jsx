@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+import htmlLogo from "../assets/images/html_logo.png";
+import cssLogo from "../assets/images/css_logo.png";
+import sassLogo from "../assets/images/sass_logo.png";
+import jsLogo from "../assets/images/js_logo.png";
+import reactLogo from "../assets/images/react_logo.png";
+
 const StyledTag = styled.div`
   font-size: 0.8rem;
   padding: 0.35rem 0.6rem;
@@ -38,9 +44,9 @@ export default function TechnologyTag({ tech }) {
 }
 
 const technology = [
-  { name: "html", logo: "../assets/images/html_logo.png" },
-  { name: "css", logo: "../assets/images/css_logo.png" },
-  { name: "scss", logo: "../assets/images/sass_logo.png" },
-  { name: "js", logo: "../assets/images/js_logo.png" },
-  { name: "react", logo: "../assets/images/react_logo.png" },
+  { name: "html", logo: htmlLogo },
+  { name: "css", logo: cssLogo },
+  { name: "scss", logo: sassLogo },
+  { name: "js", logo: jsLogo },
+  { name: "react", logo: reactLogo },
 ];
