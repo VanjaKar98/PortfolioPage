@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import backgroundImage from "../assets/images/background.png";
+
 const StyledBackgroundContainer = styled.div`
   position: absolute;
   z-index: -1;
@@ -27,7 +29,7 @@ const StyledImage = styled.img`
 export default function BackgroundContainer() {
   return (
     <StyledBackgroundContainer>
-      <StyledImage src="../assets/images/background.png" alt=""></StyledImage>
+      <StyledImage src={backgroundImage} alt=""></StyledImage>
     </StyledBackgroundContainer>
   );
 }
