@@ -27,7 +27,7 @@ Error generating stack: `+a.message+`
 `,zg=xt.img`
   display: block;
   width: 100%;
-`;function Eg(){return D.jsx(Sg,{children:D.jsx(zg,{src:"../src/assets/images/background.png",alt:""})})}const Ur="/PortfolioPage/assets/logo-BRI-7BV4.png",Ag=D0`
+`;function Eg(){return D.jsx(Sg,{children:D.jsx(zg,{src:"../assets/images/background.png",alt:""})})}const Ur="/PortfolioPage/assets/logo-BRI-7BV4.png",Ag=D0`
 0% {
     transform:rotate(0);
   }
@@ -218,7 +218,7 @@ Error generating stack: `+a.message+`
     width: 100%;
     height: 100%;
   }
-`;function Qg({tech:i}){const f=Lg.find(o=>o.name===i).logo;return D.jsxs(Gg,{children:[D.jsx("span",{children:i}),D.jsx(Xg,{children:D.jsx("img",{src:f,alt:i+" logo"})})]})}const Lg=[{name:"html",logo:"../src/assets/images/html_logo.png"},{name:"css",logo:"../src/assets/images/css_logo.png"},{name:"scss",logo:"../src/assets/images/sass_logo.png"},{name:"js",logo:"../src/assets/images/js_logo.png"},{name:"react",logo:"../src/assets/images/react_logo.png"}],Zg=D0`
+`;function Qg({tech:i}){const f=Lg.find(o=>o.name===i).logo;return D.jsxs(Gg,{children:[D.jsx("span",{children:i}),D.jsx(Xg,{children:D.jsx("img",{src:f,alt:i+" logo"})})]})}const Lg=[{name:"html",logo:"../assets/images/html_logo.png"},{name:"css",logo:"../assets/images/css_logo.png"},{name:"scss",logo:"../assets/images/sass_logo.png"},{name:"js",logo:"../assets/images/js_logo.png"},{name:"react",logo:"../assets/images/react_logo.png"}],Zg=D0`
   0%   { transform: translateX(-120%) scaleX(0.8) rotateZ(0deg); opacity: 0; }
   40%  { transform: translateX(57%) scaleX(1.2) rotateZ(12deg); opacity: 1; }
   60%  { transform: translateX(120%) scaleX(1) rotateZ(15deg); opacity: 0.5; }
