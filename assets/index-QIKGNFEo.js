@@ -623,7 +623,7 @@ Error generating stack: `+a.message+`
   @media ${st.mobileLandscape} {
     gap: 0.75rem;
   }
-`;function Gv({activeBtn:i}){const[f,o]=qe.useState(i),[r,g]=qe.useState(!0),[A,_]=qe.useState(!1);qe.useEffect(()=>{if(f===i)return;g(!1);const S=setTimeout(()=>{o(i),g(!0)},750);return()=>clearTimeout(S)},[i]);let N;switch(f){case"home":N=O.jsx(L1,{});break;case"projects":N=O.jsx(rv,{projectsVisited:A,PetprojectsVisited});break;case"about":N=O.jsx(dv,{});break;case"contact":N=O.jsx(Hv,{});break;default:N=null}const j=Yv.find(S=>S.label===f).title;return O.jsxs(Bv,{$isVisible:r,children:[O.jsx("h3",{children:j}),O.jsx(Nv,{children:N})]})}const Yv=[{label:"home",title:"junior frontend developer | React & JavaScript"},{label:"projects",title:"my projects"},{label:"about",title:"my journey"},{label:"contact",title:"contact me"}],qv=S1`
+`;function Gv({activeBtn:i}){const[f,o]=qe.useState(i),[r,g]=qe.useState(!0),[A,_]=qe.useState(!1);qe.useEffect(()=>{if(f===i)return;g(!1);const S=setTimeout(()=>{o(i),g(!0)},750);return()=>clearTimeout(S)},[i]);let N;switch(f){case"home":N=O.jsx(L1,{});break;case"projects":N=O.jsx(rv,{projectsVisited:A,setProjectsVisited:_});break;case"about":N=O.jsx(dv,{});break;case"contact":N=O.jsx(Hv,{});break;default:N=null}const j=Yv.find(S=>S.label===f).title;return O.jsxs(Bv,{$isVisible:r,children:[O.jsx("h3",{children:j}),O.jsx(Nv,{children:N})]})}const Yv=[{label:"home",title:"junior frontend developer | React & JavaScript"},{label:"projects",title:"my projects"},{label:"about",title:"my journey"},{label:"contact",title:"contact me"}],qv=S1`
 
 :root {
   --bg-primary: #0b0b12;
