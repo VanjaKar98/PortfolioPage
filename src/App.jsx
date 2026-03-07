@@ -8,6 +8,8 @@ import Main from "./components/Main";
 
 import { createGlobalStyle } from "styled-components";
 
+import { device } from "./styles/breakpoints";
+
 const GlobalStyles = createGlobalStyle`
 
 :root {
@@ -53,7 +55,7 @@ max-height:100dvh;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:1.5rem;
+gap:0.5rem;
 }
 
 ul,li,button,address,a, input, textarea{
@@ -74,7 +76,7 @@ h2{
 
 
 h3{
-  font-size: 1.5rem;   
+  font-size: 1.4rem;   
   letter-spacing: 0.02em; 
   margin-bottom: 1.5rem;
   
@@ -89,6 +91,53 @@ h4{
   margin-bottom: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+span{
+  svg{
+    display:block;
+    width:2rem;
+    height:2rem;
+    color:currentColor;
+    }
+}
+
+@media ${device.desktopL} {
+  html{
+  font-size:16px;
+  }
+}
+
+@media ${device.desktop} {
+  html{
+  font-size:15px;
+  }
+}
+
+@media ${device.tablet} {
+  html{
+  font-size:14px;
+  }
+}
+
+@media ${device.mobile} {
+  html{
+  font-size:13px;
+  }
+
+  div#root{
+  gap:0.5rem;}
+}
+
+@media ${device.mobileLandscape} {
+
+  html{
+    font-size:12px;
+  }
+
+  h3{
+   margin-bottom: 1rem;
+    } 
 }
 `;
 
