@@ -103,7 +103,7 @@ export default function Main({ activeBtn }) {
       content = (
         <ProjectsContent
           projectsVisited={projectsVisited}
-          PetprojectsVisited={PetprojectsVisited}
+          setProjectsVisited={setProjectsVisited}
         />
       );
       break;
