@@ -385,7 +385,7 @@ Error generating stack: `+a.message+`
   @media ${bt.mobile} {
     gap: 1rem;
   }
-`;function rv({wasVisited:i,setWasVisited:f}){const[o,r]=qe.useState(!1);return qe.useEffect(()=>{if(!i){const y=setTimeout(()=>r(!0),500),A=setTimeout(()=>r(!1),1e3);return f(!0),()=>{clearTimeout(y),clearTimeout(A)}}},[]),O.jsx(fv,{children:cv.map(y=>O.jsx("li",{children:O.jsx("a",{href:y.url,target:"_blank",children:O.jsx(lv,{title:y.title,desc:y.desc,img:y.img,tech:y.tech,isAnimated:o})})},y.id))})}const sv=Mt.div`
+`;function rv({projectsVisited:i,setProjectsVisited:f}){const[o,r]=qe.useState(!1);return qe.useEffect(()=>{if(!i){const y=setTimeout(()=>r(!0),500),A=setTimeout(()=>r(!1),1e3);return f(!0),()=>{clearTimeout(y),clearTimeout(A)}}},[]),O.jsx(fv,{children:cv.map(y=>O.jsx("li",{children:O.jsx("a",{href:y.url,target:"_blank",children:O.jsx(lv,{title:y.title,desc:y.desc,img:y.img,tech:y.tech,isAnimated:o})})},y.id))})}const sv=Mt.div`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -623,7 +623,7 @@ Error generating stack: `+a.message+`
   @media ${bt.mobileLandscape} {
     gap: 0.75rem;
   }
-`;function Gv({activeBtn:i}){const[f,o]=qe.useState(i),[r,y]=qe.useState(!0),[A,_]=qe.useState(!1);qe.useEffect(()=>{if(f===i)return;y(!1);const S=setTimeout(()=>{o(i),y(!0)},750);return()=>clearTimeout(S)},[i]);let N;switch(f){case"home":N=O.jsx(L1,{});break;case"projects":N=O.jsx(rv,{wasVisited:A,setWasVisited:_});break;case"about":N=O.jsx(dv,{});break;case"contact":N=O.jsx(Hv,{});break;default:N=null}const j=Yv.find(S=>S.label===f).title;return O.jsxs(Bv,{$isVisible:r,children:[O.jsx("h3",{children:j}),O.jsx(Nv,{children:N})]})}const Yv=[{label:"home",title:"junior frontend developer | React & JavaScript"},{label:"projects",title:"my projects"},{label:"about",title:"my journey"},{label:"contact",title:"contact me"}],qv=S1`
+`;function Gv({activeBtn:i}){const[f,o]=qe.useState(i),[r,y]=qe.useState(!0),[A,_]=qe.useState(!1);qe.useEffect(()=>{if(f===i)return;y(!1);const S=setTimeout(()=>{o(i),y(!0)},750);return()=>clearTimeout(S)},[i]);let N;switch(f){case"home":N=O.jsx(L1,{});break;case"projects":N=O.jsx(rv,{projectsVisited:A,PetprojectsVisited});break;case"about":N=O.jsx(dv,{});break;case"contact":N=O.jsx(Hv,{});break;default:N=null}const j=Yv.find(S=>S.label===f).title;return O.jsxs(Bv,{$isVisible:r,children:[O.jsx("h3",{children:j}),O.jsx(Nv,{children:N})]})}const Yv=[{label:"home",title:"junior frontend developer | React & JavaScript"},{label:"projects",title:"my projects"},{label:"about",title:"my journey"},{label:"contact",title:"contact me"}],qv=S1`
 
 :root {
   --bg-primary: #0b0b12;
