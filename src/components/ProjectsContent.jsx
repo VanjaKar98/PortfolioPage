@@ -32,16 +32,19 @@ const StyledProjectsList = styled.ul`
   }
 `;
 
-export default function ProjectsContent({ wasVisited, setWasVisited }) {
+export default function ProjectsContent({
+  projectsVisited,
+  setProjectsVisited,
+}) {
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
-    if (!wasVisited) {
+    if (!projectsVisited) {
       const timeout1 = setTimeout(() => setIsAnimated(true), 500);
 
       const timeout2 = setTimeout(() => setIsAnimated(false), 1000);
 
-      setWasVisited(true);
+      setProjectsVisited(true);
 
       return () => {
         clearTimeout(timeout1);

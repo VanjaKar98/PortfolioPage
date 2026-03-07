@@ -77,7 +77,7 @@ const StyledMainContent = styled.div`
 export default function Main({ activeBtn }) {
   const [visibleView, setVisibleView] = useState(activeBtn);
   const [isVisible, setIsVisible] = useState(true);
-  const [wasVisited, setWasVisited] = useState(false);
+  const [projectsVisited, setProjectsVisited] = useState(false);
 
   useEffect(() => {
     if (visibleView === activeBtn) return;
@@ -102,8 +102,8 @@ export default function Main({ activeBtn }) {
     case "projects":
       content = (
         <ProjectsContent
-          wasVisited={wasVisited}
-          setWasVisited={setWasVisited}
+          projectsVisited={projectsVisited}
+          PetprojectsVisited={PetprojectsVisited}
         />
       );
       break;
