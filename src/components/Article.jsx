@@ -1,21 +1,19 @@
 import styled, { css, keyframes } from "styled-components";
 
-import { useState, useEffect } from "react";
-
 import TechnologyTag from "./TechnologyTag";
+
+import { device } from "../styles/breakpoints";
 
 const highlightAnimation = keyframes`
   0%   { transform: translateX(-120%) scaleX(0.8) rotateZ(0deg); opacity: 0; }
   40%  { transform: translateX(57%) scaleX(1.2) rotateZ(12deg); opacity: 1; }
   60%  { transform: translateX(120%) scaleX(1) rotateZ(15deg); opacity: 0.5; }
-  100% { transform: translateX(170%) scaleX(0.8) rotateZ(15deg); opacity: 0; }
+  100% { transform: translateX(190%) scaleX(0.8) rotateZ(15deg); opacity: 0; }
 `;
 
 const StyledArticle = styled.article`
   position: relative;
-  width: 320px;
-  height: 370px;
-  padding: 1rem;
+  padding: 1rem 1rem 4rem;
   background: var(--bg-secondary);
   border: 2px solid var(--border-primary);
   border-radius: 0.4rem;
@@ -54,8 +52,8 @@ const StyledArticle = styled.article`
     background-size: 100%;
     background-repeat: no-repeat;
     content: "";
-    ${({ $isHovered }) =>
-      $isHovered &&
+    ${({ $isAnimated }) =>
+      $isAnimated &&
       css`
         animation: ${highlightAnimation} 0.5s linear;
       `}
@@ -65,8 +63,10 @@ const StyledArticle = styled.article`
     cursor: pointer;
   }
 
-  iframe {
-    width: 100%;
+  & > div {
+    @media ${device.mobileLandscape} {
+      display: none;
+    }
   }
 
   p {
@@ -78,44 +78,57 @@ const StyledArticle = styled.article`
       text-transform: capitalize;
     }
   }
+
+  @media ${device.desktop} {
+    padding-bottom: 2rem;
+  }
+
+  @media ${device.mobileLandscape} {
+    padding: 1rem;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    padding-bottom: 1.5rem;
+  }
 `;
 
-const StyledTechContainer = styled.ul`
+const StyledImageContainer = styled.div`
+  width: 100%;
+  aspect-ratio: 1/0.6;
+  border: 2px solid var(--border-primary);
+`;
+
+const StyledImage = styled.img`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s linear;
+`;
+
+const StyledTechStack = styled.ul`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
 `;
 
-export default function Article({ title, desc, img, tech }) {
-  const [isHovered, setHover] = useState(false);
-
-  function hoverHandle() {
-    setHover(true);
-  }
-
-  useEffect(() => {
-    if (isHovered === true) {
-      const timeout = setTimeout(() => setHover(false), 500);
-      return () => clearTimeout(timeout);
-    }
-  }, [isHovered]);
-
+export default function Article({ title, desc, img, tech, isAnimated }) {
   return (
-    <StyledArticle onMouseEnter={hoverHandle} $isHovered={isHovered}>
+    <StyledArticle $isAnimated={isAnimated}>
       <h4>{title}</h4>
       <p>{desc}</p>
-      <iframe
-      // src="https://vanjakar98.github.io/ConsultPage/"
-      // frameborder="0"
-      ></iframe>
-      <StyledTechContainer>
+      <StyledImageContainer>
+        <StyledImage src={img} alt="Project preview" />
+      </StyledImageContainer>
+      <StyledTechStack>
         {tech.map((tech) => (
           <li key={tech}>
             <TechnologyTag tech={tech} />
           </li>
         ))}
-      </StyledTechContainer>
+      </StyledTechStack>
     </StyledArticle>
   );
 }

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import Button from "./Button";
 
+import { device } from "../styles/breakpoints";
+
 const StyledNavigation = styled.nav`
   position: relative;
   height: 100%;
@@ -12,7 +14,20 @@ const StyledNavigation = styled.nav`
     position: absolute;
     left: 0;
     width: 8rem;
-    transform: translateX(calc(-50% + ${({ $offset = "2rem" }) => $offset}));
+
+    ${(props) => {
+      switch (props.$offset) {
+        case "home":
+          return "transform: translateX(calc(-50% + 2rem));";
+        case "projects":
+          return "transform: translateX(calc(-50% + 7rem));";
+        case "about":
+          return "transform: translateX(calc(-50% + 12rem));";
+        case "contact":
+          return "transform: translateX(calc(-50% + 17rem));";
+      }
+    }}
+
     transition: transform 1s ease-in-out;
   }
 
@@ -27,6 +42,10 @@ const StyledNavigation = styled.nav`
       var(--underline) 65%,
       transparent 100%
     );
+
+    @media ${device.mobileLandscape} {
+      bottom: calc(-0.5rem - 2.5px);
+    }
   }
 
   &::after {
@@ -41,6 +60,10 @@ const StyledNavigation = styled.nav`
       transparent 100%
     );
     filter: blur(6px);
+
+    @media ${device.mobileLandscape} {
+      bottom: calc(-0.5rem - 2.5px);
+    }
   }
 `;
 
@@ -51,13 +74,15 @@ const StyledList = styled.ul`
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 700px) {
+    margin-right: 0;
+  }
 `;
 
 export default function Navigation({ activeBtn, handleActiveBtn }) {
   return (
-    <StyledNavigation
-      $offset={navBtns.find((btn) => btn.label === activeBtn).offset}
-    >
+    <StyledNavigation $offset={activeBtn}>
       <StyledList>
         {navBtns.map((btn) => (
           <li key={btn.label}>
@@ -77,8 +102,8 @@ export default function Navigation({ activeBtn, handleActiveBtn }) {
 }
 
 const navBtns = [
-  { label: "home", offset: "2rem" },
-  { label: "projects", offset: "7rem" },
-  { label: "about", offset: "12rem" },
-  { label: "contact", offset: "17rem" },
+  { label: "home" },
+  { label: "projects" },
+  { label: "about" },
+  { label: "contact" },
 ];

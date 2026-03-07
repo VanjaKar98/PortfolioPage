@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-
 import styled from "styled-components";
+
+import { useState, useEffect } from "react";
 
 import HomeContent from "./HomeContent";
 
@@ -10,24 +10,39 @@ import AboutContent from "./AboutContent";
 
 import ContactContent from "./ContactContent";
 
+import { device } from "../styles/breakpoints";
+
 const StyledMain = styled.main`
   width: 100%;
   max-width: 1200px;
-  height: calc(100dvh - 7rem);
+  min-height: 0;
   padding: 1rem 1rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-
+  gap: 1rem;
+  flex: 1;
   opacity: ${({ $isVisible }) => ($isVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
   pointer-events: ${({ $isVisible }) => ($isVisible ? "auto" : "none")};
+
+  @media ${device.mobile} {
+    gap: 0.5rem;
+  }
+
+  @media ${device.mobileLandscape} {
+    gap: 0.3rem;
+  }
+
+  @media ${device.mobile}, ${device.mobileLandscape} {
+    padding: 0.5rem 1rem 1rem;
+  }
 `;
 
 const StyledMainContent = styled.div`
   width: 100%;
   height: 100%;
+  padding-right: 1rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -49,11 +64,20 @@ const StyledMainContent = styled.div`
     background-color: var(--col-secondary);
     border-radius: 8px;
   }
+
+  @media ${device.mobile} {
+    gap: 1rem;
+  }
+
+  @media ${device.mobileLandscape} {
+    gap: 0.75rem;
+  }
 `;
 
 export default function Main({ activeBtn }) {
   const [visibleView, setVisibleView] = useState(activeBtn);
   const [isVisible, setIsVisible] = useState(true);
+  const [wasVisited, setWasVisited] = useState(false);
 
   useEffect(() => {
     if (visibleView === activeBtn) return;
@@ -76,7 +100,12 @@ export default function Main({ activeBtn }) {
       break;
 
     case "projects":
-      content = <ProjectsContent />;
+      content = (
+        <ProjectsContent
+          wasVisited={wasVisited}
+          setWasVisited={setWasVisited}
+        />
+      );
       break;
 
     case "about":

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import backgroundImage from "../assets/images/background.png";
+import background from "../assets/images/background/background.png";
 
 const StyledBackgroundContainer = styled.div`
   position: absolute;
@@ -19,6 +19,12 @@ const StyledBackgroundContainer = styled.div`
     height: 30%;
     background: linear-gradient(to top, var(--bg-primary), transparent 100%);
   }
+
+  @media (orientation: portrait) {
+    width: 200%;
+    left: unset;
+    right: 0;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -29,7 +35,7 @@ const StyledImage = styled.img`
 export default function BackgroundContainer() {
   return (
     <StyledBackgroundContainer>
-      <StyledImage src={backgroundImage} alt=""></StyledImage>
+      <StyledImage src={background} alt=""></StyledImage>
     </StyledBackgroundContainer>
   );
 }

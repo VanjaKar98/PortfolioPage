@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo/logo.png";
 
 const StyledTechStack = styled.div`
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -21,7 +21,8 @@ const StyledList = styled.ul`
     align-items: center;
     gap: 5px;
 
-    & > span {
+    &::before {
+      content: "";
       display: block;
       width: 0.75rem;
       height: 0.75rem;
@@ -44,21 +45,11 @@ export default function HomeContent() {
         <h4>Tech stack</h4>
 
         <StyledList>
-          <li>
-            <span></span>HTML
-          </li>
-          <li>
-            <span></span>SCSS
-          </li>
-          <li>
-            <span></span>JavaScript
-          </li>
-          <li>
-            <span></span>React
-          </li>
-          <li>
-            <span></span>GitHub
-          </li>
+          <li>HTML</li>
+          <li>SCSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Git</li>
         </StyledList>
       </StyledTechStack>
     </>

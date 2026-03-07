@@ -1,8 +1,10 @@
+import styled from "styled-components";
+
 import Logo from "./Logo";
 
 import Navigation from "./Navigation";
 
-import styled from "styled-components";
+import { device } from "../styles/breakpoints";
 
 const StyledHeader = styled.header`
   position: relative;
@@ -12,6 +14,14 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 700px) {
+    height: auto;
+  }
+
+  @media ${device.mobileLandscape} {
+    padding: 0.5rem 1rem;
+  }
 `;
 
 const StyledInner = styled.div`
@@ -21,6 +31,15 @@ const StyledInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media ${device.mobileLandscape} {
+    gap: 1rem;
+  }
 `;
 
 const StyledHeaderBorder = styled.div`
@@ -37,6 +56,10 @@ const StyledInfoSection = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
+
+  @media ${device.desktop} {
+    align-items: flex-start;
+  }
 `;
 
 const StyledOwner = styled.div`
@@ -49,6 +72,11 @@ const StyledOwner = styled.div`
     font-size: 0.875rem;
     font-weight: 400;
     opacity: 0.75;
+  }
+
+  @media ${device.desktop} {
+    flex-direction: column;
+    gap: 0.1rem;
   }
 `;
 

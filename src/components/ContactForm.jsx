@@ -8,8 +8,11 @@ import Button from "./Button";
 
 import FormPopup from "./FormPopup";
 
+import { device } from "../styles/breakpoints";
+
 const StyledForm = styled.form`
-  width: 25rem;
+  width: 100%;
+  max-width: 25rem;
   padding: 2rem;
   background: var(--bg-secondary);
   border: 2px solid var(--border-primary);
@@ -38,10 +41,44 @@ const StyledForm = styled.form`
     line-height: 1.6rem;
     caret-color: var(--col-secondary);
     box-sizing: border-box;
+
+    &::placeholder {
+      color: var(--col-tertiary);
+      visibility: hidden;
+
+      @media ${device.mobileLandscape} {
+        visibility: visible;
+      }
+    }
+  }
+
+  & label {
+    display: block;
+
+    @media ${device.mobileLandscape} {
+      display: none;
+    }
   }
 
   & input {
-    height: 1.8rem;
+    height: 2rem;
+  }
+
+  & textarea {
+    height: 8rem;
+
+    @media ${device.mobile}, ${device.mobileLandscape} {
+      height: 2rem;
+    }
+  }
+
+  @media ${device.mobile} {
+    align-self: center;
+  }
+
+  @media ${device.mobile}, ${device.mobileLandscape} {
+    padding: 1rem;
+    gap: 1rem;
   }
 `;
 
@@ -78,7 +115,7 @@ export default function ContactForm({ isActive, activePopupHandle }) {
     const emailPattern = /\S+@\S+\.\S+/;
 
     if (!allInputsFilled) {
-      content = "All inputs are required!!";
+      content = "All inputs are required!";
     } else if (!emailPattern.test(dataObject.email)) {
       content = "Email format is incorrect!";
     } else {
@@ -92,7 +129,7 @@ export default function ContactForm({ isActive, activePopupHandle }) {
         });
 
         if (!response.ok) throw new Error();
-        content = "Message was submited!";
+        content = "Message was submitted!";
         mailAlertHandle(event);
         event.target.reset();
       } catch (error) {
@@ -127,17 +164,34 @@ export default function ContactForm({ isActive, activePopupHandle }) {
         <div>
           <label htmlFor="name">Your name</label>
 
-          <input id="name" type="text" name="name" autoComplete="off" />
+          <input
+            id="name"
+            type="text"
+            name="name"
+            autoComplete="off"
+            placeholder="Your name"
+          />
         </div>
 
         <div>
           <label htmlFor="email">Email</label>
-          <input id="email" type="text" name="email" autoComplete="off" />
+          <input
+            id="email"
+            type="text"
+            name="email"
+            autoComplete="off"
+            placeholder="Email"
+          />
         </div>
 
         <div>
           <label htmlFor="message">Type a message</label>
-          <textarea id="message" name="message" rows={5} autoComplete="off" />
+          <textarea
+            id="message"
+            name="message"
+            autoComplete="off"
+            placeholder="Type a message"
+          />
         </div>
 
         <Button $primary type="submit">

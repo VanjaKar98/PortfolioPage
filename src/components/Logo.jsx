@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo/logo.png";
 
 const logoSwing = keyframes`
 0% {

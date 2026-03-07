@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import htmlLogo from "../assets/images/html_logo.png";
-import cssLogo from "../assets/images/css_logo.png";
-import sassLogo from "../assets/images/sass_logo.png";
-import jsLogo from "../assets/images/js_logo.png";
-import reactLogo from "../assets/images/react_logo.png";
+import htmlLogo from "../assets/images/tech/html_logo.png";
+import cssLogo from "../assets/images/tech/css_logo.png";
+import sassLogo from "../assets/images/tech/sass_logo.png";
+import jsLogo from "../assets/images/tech/js_logo.png";
+import reactLogo from "../assets/images/tech/react_logo.png";
 
 const StyledTag = styled.div`
   font-size: 0.8rem;

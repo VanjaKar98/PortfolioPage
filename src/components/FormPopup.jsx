@@ -13,8 +13,7 @@ const StyledPopup = styled.div`
   backdrop-filter: grayscale(1) blur(4px);
 
   & div {
-    width: 20rem;
-    height: 10rem;
+    padding: 2rem;
     color: var(--col-secondary);
     background: var(--bg-secondary);
     border: 2px solid var(--border-primary);
@@ -22,6 +21,10 @@ const StyledPopup = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    & p {
+      font-size: 1rem;
+    }
   }
 `;
 

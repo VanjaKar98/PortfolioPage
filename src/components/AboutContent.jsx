@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo/logo.png";
 
 const StyledTechStack = styled.div`
   margin-top: 2rem;
@@ -21,7 +21,8 @@ const StyledList = styled.ul`
     align-items: center;
     gap: 5px;
 
-    & > span {
+    &::before {
+      content: "";
       display: block;
       width: 0.75rem;
       height: 0.75rem;
@@ -60,22 +61,11 @@ export default function AboutContent() {
         <h4>Approach & Skills</h4>
 
         <StyledList>
-          <li>
-            <span></span>Responsive and accessible web design
-          </li>
-          <li>
-            <span></span>Clean and maintainable code
-          </li>
-          <li>
-            <span></span>React, JavaScript, HTML, CSS
-          </li>
-          <li>
-            <span></span>API integration and project-based learning
-          </li>
-          <li>
-            <span></span>Continuous skill improvement through self-study and
-            bootcamps
-          </li>
+          <li>Responsive and accessible web design</li>
+          <li>Clean and maintainable code</li>
+          <li>React, JavaScript, HTML, SCSS</li>
+          <li>API integration and project-based learning</li>
+          <li>Continuous skill improvement through self-study and bootcamps</li>
         </StyledList>
       </StyledTechStack>
     </>
