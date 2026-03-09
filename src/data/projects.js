@@ -39,7 +39,7 @@ export const projects = [
     title: "personal finance app",
     desc: "app for tracking spendings",
     img: finance_app,
-    tech: ["html", "css", "react"],
+    tech: ["html", "scss", "react"],
     url: "https://vanjakar98.github.io/PersonalFinanceApp/",
   },
 ];
