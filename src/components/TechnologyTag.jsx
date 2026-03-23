@@ -3,8 +3,10 @@ import styled from "styled-components";
 import htmlLogo from "../assets/images/tech/html_logo.png";
 import cssLogo from "../assets/images/tech/css_logo.png";
 import sassLogo from "../assets/images/tech/sass_logo.png";
+import styledLogo from "../assets/images/tech/styledcomp_logo.png";
 import jsLogo from "../assets/images/tech/js_logo.png";
 import reactLogo from "../assets/images/tech/react_logo.png";
+import rechartsLogo from "../assets/images/tech/recharts_logo.png";
 
 const StyledTag = styled.div`
   font-size: 0.8rem;
@@ -47,6 +49,8 @@ const technology = [
   { name: "html", logo: htmlLogo },
   { name: "css", logo: cssLogo },
   { name: "scss", logo: sassLogo },
+  { name: "styled", logo: styledLogo },
   { name: "js", logo: jsLogo },
   { name: "react", logo: reactLogo },
+  { name: "recharts", logo: rechartsLogo },
 ];

@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://VanjaKar98.github.io/PortfolioPage/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
