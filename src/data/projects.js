@@ -15,7 +15,8 @@ export const projects = [
     desc: "movie review page",
     img: moviehubSiteThumb,
     tech: ["html", "css", "js"],
-    url: "https://vanjakar98.github.io/MovieHub-site/",
+    site: "https://vanjakar98.github.io/MovieHub-site/",
+    code: "https://github.com/VanjaKar98/MovieHub-site",
   },
 
   {
@@ -24,7 +25,8 @@ export const projects = [
     desc: "job searching site",
     img: jobSiteThumb,
     tech: ["html", "scss", "js"],
-    url: "https://vanjakar98.github.io/JobSite/",
+    site: "https://vanjakar98.github.io/JobSite/",
+    code: "https://github.com/VanjaKar98/JobSite",
   },
 
   {
@@ -33,7 +35,8 @@ export const projects = [
     desc: "consult page visual",
     img: consultSiteThumb,
     tech: ["html", "scss", "js"],
-    url: "https://vanjakar98.github.io/ConsultPage/",
+    site: "https://vanjakar98.github.io/ConsultPage/",
+    code: "https://github.com/VanjaKar98/ConsultPage",
   },
 
   {
@@ -42,15 +45,17 @@ export const projects = [
     desc: "app for tracking spendings",
     img: financeAppThumb,
     tech: ["html", "styled", "react"],
-    url: "https://vanjakar98.github.io/PersonalFinanceApp/",
+    site: "https://vanjakar98.github.io/PersonalFinanceApp/",
+    code: "https://github.com/VanjaKar98/PersonalFinanceApp",
   },
 
   {
     id: 5,
-    title: "weather forecast application",
+    title: "weather app",
     desc: "app for weather forecast",
     img: weatherAppThumb,
     tech: ["html", "scss", "react", "recharts"],
-    url: "https://vanjakar98.github.io/WeatherApp/",
+    site: "https://vanjakar98.github.io/WeatherApp/",
+    code: "https://github.com/VanjaKar98/WeatherApp",
   },
 ];

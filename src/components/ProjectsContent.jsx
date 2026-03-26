@@ -57,15 +57,15 @@ export default function ProjectsContent({
     <StyledProjectsList>
       {projects.map((project) => (
         <li key={project.id}>
-          <a href={project.url} target="_blank">
-            <Article
-              title={project.title}
-              desc={project.desc}
-              img={project.img}
-              tech={project.tech}
-              isAnimated={isAnimated}
-            />
-          </a>
+          <Article
+            title={project.title}
+            desc={project.desc}
+            img={project.img}
+            tech={project.tech}
+            isAnimated={isAnimated}
+            site={project.site}
+            code={project.code}
+          />
         </li>
       ))}
     </StyledProjectsList>

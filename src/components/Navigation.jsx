@@ -62,7 +62,7 @@ const StyledNavigation = styled.nav`
     filter: blur(6px);
 
     @media ${device.mobileLandscape} {
-      bottom: calc(-0.5rem - 2.5px);
+      bottom: calc(-0.5rem - 6px);
     }
   }
 `;

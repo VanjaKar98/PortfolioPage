@@ -22,9 +22,10 @@ const StyledMain = styled.main`
   align-items: flex-start;
   gap: 1rem;
   flex: 1;
-  opacity: ${({ $isVisible }) => ($isVisible ? "1" : "0")};
+  opacity: ${({ $isContentVisible }) => ($isContentVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
-  pointer-events: ${({ $isVisible }) => ($isVisible ? "auto" : "none")};
+  pointer-events: ${({ $isContentVisible }) =>
+    $isContentVisible ? "auto" : "none"};
 
   @media ${device.mobile} {
     gap: 0.5rem;
@@ -76,17 +77,17 @@ const StyledMainContent = styled.div`
 
 export default function Main({ activeBtn }) {
   const [visibleView, setVisibleView] = useState(activeBtn);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isContentVisible, setIsContentVisible] = useState(true);
   const [projectsVisited, setProjectsVisited] = useState(false);
 
   useEffect(() => {
     if (visibleView === activeBtn) return;
 
-    setIsVisible(false);
+    setIsContentVisible(false);
 
     const timeout = setTimeout(() => {
       setVisibleView(activeBtn);
-      setIsVisible(true);
+      setIsContentVisible(true);
     }, 750);
 
     return () => clearTimeout(timeout);
@@ -123,7 +124,7 @@ export default function Main({ activeBtn }) {
   const title = mainTitle.find((btn) => btn.label === visibleView).title;
 
   return (
-    <StyledMain $isVisible={isVisible}>
+    <StyledMain $isContentVisible={isContentVisible}>
       <h3>{title}</h3>
       <StyledMainContent>{content}</StyledMainContent>
     </StyledMain>

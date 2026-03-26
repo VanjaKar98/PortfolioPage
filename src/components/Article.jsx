@@ -2,7 +2,11 @@ import styled, { css, keyframes } from "styled-components";
 
 import TechnologyTag from "./TechnologyTag";
 
+import Link from "./Link";
+
 import { device } from "../styles/breakpoints";
+
+import { GithubIcon, LiveIcon } from "./Icons";
 
 const highlightAnimation = keyframes`
   0%   { transform: translateX(-120%) scaleX(0.8) rotateZ(0deg); opacity: 0; }
@@ -13,7 +17,7 @@ const highlightAnimation = keyframes`
 
 const StyledArticle = styled.article`
   position: relative;
-  padding: 1rem 1rem 4rem;
+  padding: 1rem;
   background: var(--bg-secondary);
   border: 2px solid var(--border-primary);
   border-radius: 0.4rem;
@@ -63,7 +67,7 @@ const StyledArticle = styled.article`
     cursor: pointer;
   }
 
-  & > div {
+  & > div:first-of-type {
     @media ${device.mobileLandscape} {
       display: none;
     }
@@ -107,14 +111,33 @@ const StyledImage = styled.img`
   transition: transform 0.5s linear;
 `;
 
-const StyledTechStack = styled.ul`
+const StyledLinkContainer = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+`;
+
+const StyledTechStack = styled.ul`
+  min-height: calc(2 * (2rem + 4px) + 0.5rem);
+  display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 0.5rem;
 `;
 
-export default function Article({ title, desc, img, tech, isAnimated }) {
+export default function Article({
+  title,
+  desc,
+  img,
+  tech,
+  isAnimated,
+  site,
+  code,
+}) {
   return (
     <StyledArticle $isAnimated={isAnimated}>
       <h4>{title}</h4>
@@ -129,6 +152,14 @@ export default function Article({ title, desc, img, tech, isAnimated }) {
           </li>
         ))}
       </StyledTechStack>
+      <StyledLinkContainer>
+        <Link $iconSm href={site}>
+          <LiveIcon />
+        </Link>
+        <Link $iconSm href={code}>
+          <GithubIcon />
+        </Link>
+      </StyledLinkContainer>
     </StyledArticle>
   );
 }
