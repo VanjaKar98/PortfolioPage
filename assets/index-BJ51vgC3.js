@@ -354,10 +354,6 @@ Error generating stack: `+a.message+`
       `}
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
   & > div:first-of-type {
     @media ${st.mobileLandscape} {
       display: none;
