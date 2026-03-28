@@ -63,10 +63,6 @@ const StyledArticle = styled.article`
       `}
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
   & > div:first-of-type {
     @media ${device.mobileLandscape} {
       display: none;
